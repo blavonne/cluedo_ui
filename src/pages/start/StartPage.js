@@ -1,5 +1,6 @@
 import React from "react";
 import {CharacterList} from "../../entities/character/ui/CharacterList";
+import {Map} from "../../entities/map/ui/Map";
 
 function StartPage() {
 	return (
@@ -22,6 +23,7 @@ function StartPage() {
 				Подозреваемые:
 			</h2>
 			<CharacterList/>
+			<Map/>
 		</div>
 	)
 }

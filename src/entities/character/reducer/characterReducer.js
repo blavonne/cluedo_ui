@@ -1,10 +1,10 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {Status} from "../../../shared/Status";
+import {createStatus} from "../../../shared/Status";
 
 const initialState = {
 	byId: {},
 	all: [],
-	status: new Status(),
+	status: createStatus(),
 }
 
 const characterSlice = createSlice({

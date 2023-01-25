@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import "the-new-css-reset/css/reset.css";
 import App from './app/App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux';

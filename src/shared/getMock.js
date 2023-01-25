@@ -1,8 +1,8 @@
-import {Status} from "./Status";
+import {createStatus} from "./Status";
 import {sleep} from "./sleep";
 
 export async function getMock(data, code, delay = 1, errorMsg = '') {
-	const status = new Status(false, false, errorMsg, code);
+	const status = createStatus(false, false, errorMsg, code);
 	const response = {
 		data,
 		status,

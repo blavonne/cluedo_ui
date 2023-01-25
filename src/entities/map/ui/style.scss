@@ -1,0 +1,48 @@
+.board_row {
+	display: flex;
+}
+
+.square {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 48px;
+	min-height: 48px;
+	width: 48px;
+	min-width: 48px;
+	border: 1px solid;
+}
+
+.hallway {
+	background-color: bisque;
+	border-color: burlywood;
+	color: #463223;
+
+	.foots-svg {
+		display: none;
+		transform: rotate(335deg);
+		width: 80%;
+		height: 80%;
+	}
+
+	&:hover {
+		box-shadow: inset 2px 2px 4px burlywood, inset -2px -2px 4px burlywood;
+		//background: radial-gradient(circle at center, bisque 0, bisque 70%, burlywood 100%);
+		.foots-svg {
+			display: block;
+		}
+	}
+}
+
+.room {
+	background-color: cadetblue;
+	border-color: cadetblue;
+}
+
+.door {
+	color: #8B4513;
+	.door-svg {
+		height: 80%;
+		width: auto;
+	}
+}

@@ -1,15 +1,14 @@
-import {Status} from "../../../shared/Status";
+import {createStatus} from "../../../shared/Status";
 import {load} from "./characterReducer";
 import {isDev} from "../../../shared/isDev";
 import {getMock} from "../../../shared/getMock";
-import {responseExample} from "../response";
-import {serialise} from "../../../shared/serialize";
+import {responseExample} from "./response";
 
 export function loadCharactersThunk() {
 	return async (dispatch, getState) => {
 		const url = '';
 		let data = [];
-		let status = new Status();
+		let status = createStatus();
 
 		if (isDev()) {
 			const response = await getMock(responseExample);
@@ -36,6 +35,6 @@ export function loadCharactersThunk() {
 				})
 		}
 
-		dispatch(load(data, serialise(status)));
+		dispatch(load(data, status));
 	}
 }

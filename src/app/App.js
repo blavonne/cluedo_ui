@@ -1,8 +1,7 @@
-import './App.css';
+import './style.scss';
 import StartPage from "../pages/start/StartPage";
 
 function App() {
-	console.log('this is some var', process.env.NODE_ENV)
 	return (
 		<div className="App">
 			<StartPage/>
