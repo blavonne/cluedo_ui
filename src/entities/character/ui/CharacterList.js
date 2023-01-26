@@ -13,7 +13,7 @@ export function CharacterList() {
 		}
 
 		src.status.loading && loadData();
-	}, [src.status.loading])
+	}, [src.status.loading]);
 
 	return <Fallback status={src.status}>
 		{src.all.map(id => {
