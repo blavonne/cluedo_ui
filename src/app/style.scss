@@ -1,8 +1,27 @@
+@import '../shared/fonts/fonts';
+
 * {
 	transition: all 0.2s;
 	box-sizing: border-box;
+	font-family: Roboto, sans-serif;
+	font-size: 16px;
 }
 
 svg {
 	fill: currentColor;
+}
+
+h1 {
+	font-size: 48px;
+	font-family: Lobster, sans-serif;
+}
+
+h2 {
+	font-size: 36px;
+}
+
+h3 {
+	font-size: 24px;
+	font-family: Caveat, sans-serif;
+	font-weight: 400;
 }

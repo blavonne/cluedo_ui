@@ -1,45 +1,34 @@
-import {responseExample} from "./response";
+import {area} from "../ui/utils/area";
 
 let x = {
-	from: 9,
-	to: 16,
+	from: 1,
+	to: 6,
 };
 let y = {
 	from: 1,
-	to: 8,
+	to: 6,
 };
 
 for (let i = x.from; i <= x.to; i++) {
 	for (let j = y.from; j <= y.to; j++) {
-		console.log(`[${i + ', ' + j}],`);
+		console.log(`createCoords(${i}, ${j}),`);
 	}
 }
 
-for (let i = 1; i < 25; i++) {
-	// ищет незанятые  клетки
-	for (let j = 1; j < 25; j++) {
-		let rooms = responseExample.rooms.all;
+let allAvailableCoords = area.kitchen.concat(area.library).concat(area.billiard).concat(area.cabinet).concat(area.living).concat(area.dining).concat(area.garden).concat(area.storage).concat(area.bedroom).concat(area.bathroom);
+
+for (let col = 1; col < 25; col++) {
+	for (let row = 1; row < 25; row++) {
 		let isBusy = false;
 
-		for (let m = 0; m < rooms.length; m++) {
-			let roomId = rooms[m];
-			let room = responseExample.rooms.byId[roomId];
-			let area = room.area;
-
-			for (let k = 0; k < area.length; k++) {
-				if (area[k][0] === i && area[k][1] === j) {
-					isBusy = true;
-					break;
-				}
-			}
-
-			if (isBusy)
+		for (let k = 0; k < allAvailableCoords.length; k++) {
+			if (allAvailableCoords[k].col === col && allAvailableCoords[k].row === row) {
+				isBusy = true;
 				break;
+			}
 		}
 
-		if (isBusy)
-			break;
-		else
-			console.log(`[${i + ', ' + j}],`);
+		if (!isBusy)
+			console.log(`createCoords(${col}, ${row}),`);
 	}
 }

@@ -25,22 +25,74 @@
 		height: 80%;
 	}
 
-	&:hover {
-		box-shadow: inset 2px 2px 4px burlywood, inset -2px -2px 4px burlywood;
-		//background: radial-gradient(circle at center, bisque 0, bisque 70%, burlywood 100%);
-		.foots-svg {
-			display: block;
+	&:not(.with_player) {
+		&:hover {
+			box-shadow: inset 2px 2px 4px burlywood, inset -2px -2px 4px burlywood;
+			//background: radial-gradient(circle at center, bisque 0, bisque 70%, burlywood 100%);
+			.foots-svg {
+				display: block;
+			}
 		}
+	}
+
+	&.with_player {
+		box-shadow: inset 2px 2px 4px burlywood, inset -2px -2px 4px burlywood;
 	}
 }
 
-.room {
+.kitchen {
 	background-color: cadetblue;
 	border-color: cadetblue;
 }
 
+.storage {
+	background-color: brown;
+	border-color: brown;
+}
+
+.living {
+	background-color: darksalmon;
+	border-color: darksalmon;
+}
+
+.dining {
+	background-color: lemonchiffon;
+	border-color: lemonchiffon;
+}
+
+.billiard {
+	background-color: darkgreen;
+	border-color: darkgreen;
+}
+
+.library {
+	background-color: indianred;
+	border-color: indianred;
+}
+
+.cabinet {
+	background-color: darkolivegreen;
+	border-color: darkolivegreen;
+}
+
+.garden {
+	background-color: hotpink;
+	border-color: hotpink;
+}
+
+.bedroom {
+	background-color: lavenderblush;
+	border-color: lavenderblush;
+}
+
+.bathroom {
+	background-color: aquamarine;
+	border-color: aquamarine;
+}
+
 .door {
 	color: #8B4513;
+
 	.door-svg {
 		height: 80%;
 		width: auto;

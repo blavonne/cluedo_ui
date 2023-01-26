@@ -1,13 +1,13 @@
-export function isDoor(rooms, x, y) {
+export function isDoor(rooms, col, row) {
 	for (let i = 0; i < rooms.all.length; i++) {
 		let id = rooms.all[i];
 		let room =  rooms.byId[id];
-		let entries = room.entries;
+		let doors = room.doors;
 
-		for (let j = 0; j < entries.length; j++) {
-			let coords = entries[j];
+		for (let j = 0; j < doors.length; j++) {
+			let coords = doors[j];
 
-			if (coords[0] === x && coords[1] === y)
+			if (coords.col === col && coords.row === row)
 				return true;
 		}
 	}

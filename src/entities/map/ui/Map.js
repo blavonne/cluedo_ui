@@ -1,33 +1,47 @@
 import React from "react";
 import classNames from 'classnames';
 import {responseExample} from "../reducer/response";
-import './style.scss';
-import {DOOR, getMapMatrix, HALLWAY, ROOM} from "./utils/getMapMatrix";
+import {getBoardMatrix} from "./utils/getMapMatrix";
 import {HandySvg} from 'handy-svg';
 import foots from '../../../shared/imges/foots.svg';
 import door from '../../../shared/imges/door.svg';
+import {HALLWAY} from "./utils/defines";
+import './style.scss';
+
+function getClassProps(cell) {
+	return classNames('square',
+		cell.roomId,
+		{door: cell.isDoor},
+		{with_player: cell.playerId !== null}
+	);
+}
 
 export function Map({playersCount}) {
 	// карта должна знать о кол-ве игроков; в комнатах карты могут быть
 	// карточки, если игроков всего двое
-	const rooms = responseExample.rooms;
-	const mapMatrix = getMapMatrix(rooms);
+	const response = responseExample;
+	const board = getBoardMatrix(response.rooms, response.players);
 
 	return (
 		<div className='game_board'>
-			{mapMatrix.map((row, i) => {
+			{board.all.map(row => {
 				return (
-					<div className='board_row' key={i}>
-						{row.map((field, j) => {
-							const className = classNames('square',
-								{room: field === ROOM},
-								{door: field === DOOR},
-								{hallway: field === HALLWAY});
+					<div className='board_row' key={row}>
+						{board.byId[row].all.map(col => {
+							const cell = board.byId[row].byId[col];
+							const {roomId, isDoor, playerId} = cell;
+							const isHall = roomId === HALLWAY;
+
 							return (
-								<div className={className} key={j}>
-									{field === HALLWAY && <HandySvg src={foots}
-																className='foots-svg'/>}
-									{field === DOOR && <HandySvg src={door} className='door-svg'/>}
+								<div className={getClassProps(cell)}
+									 key={row + col}>
+									{isHall && playerId === null &&
+										<HandySvg src={foots}
+												  className='foots-svg'/>}
+									{isDoor && <HandySvg src={door}
+														 className='door-svg'/>}
+									{playerId !== null &&
+										<span>P{cell.playerId}</span>}
 								</div>
 							)
 						})}
