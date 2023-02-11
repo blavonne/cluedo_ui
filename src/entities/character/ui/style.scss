@@ -1,0 +1,18 @@
+.character_list {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+
+	.character_row {
+		display: flex;
+		gap: 32px;
+
+		.character {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+			width: 304px;
+			padding: 4px;
+		}
+	}
+}
