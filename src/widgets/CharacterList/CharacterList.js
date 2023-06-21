@@ -1,9 +1,9 @@
 import {useDispatch, useSelector} from "react-redux";
-import {Fallback} from "../../../shared/Fallback";
+import {Fallback} from "../../shared/Fallback";
 import {useEffect} from "react";
-import {loadCharactersThunk} from "../reducer/actions";
-import {getCharacters} from "../reducer/selectors";
-import {getCharacterImage} from "../reducer/utils";
+import {loadCharactersThunk} from "../../entities/character/reducer/actions";
+import {getCharacters} from "../../entities/character/reducer/selectors";
+import {getCharacterImage} from "../../entities/character/reducer/utils";
 import './style.scss';
 
 function getRows(all) {

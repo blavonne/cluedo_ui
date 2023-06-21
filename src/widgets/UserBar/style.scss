@@ -1,0 +1,30 @@
+@import '../../shared/css/library';
+
+.user_bar {
+	align-items: center;
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 16px;
+	gap: 8px;
+
+	.user_name {
+		font-weight: 500;
+	}
+
+	button {
+		cursor: pointer;
+		align-items: center;
+		display: flex;
+		justify-content: flex-end;
+		width: 24px;
+		height: 24px;
+
+		&.menu {
+			@include hover_after();
+
+			img {
+				height: 24px;
+			}
+		}
+	}
+}

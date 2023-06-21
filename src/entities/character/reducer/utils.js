@@ -1,10 +1,10 @@
 import React from "react";
-import Plum from '../../../shared/imges/Plum.png';
-import Orchid from '../../../shared/imges/Orchid.png';
-import Scarlett from '../../../shared/imges/Scarlett.png';
-import Green from '../../../shared/imges/Green.png';
-import Pickock from '../../../shared/imges/Pickock.png';
-import Mastard from '../../../shared/imges/Mastard.png';
+import Plum from '../../../shared/imges/characters/Plum.png';
+import Orchid from '../../../shared/imges/characters/Orchid.png';
+import Scarlett from '../../../shared/imges/characters/Scarlett.png';
+import Green from '../../../shared/imges/characters/Green.png';
+import Pickock from '../../../shared/imges/characters/Pickock.png';
+import Mastard from '../../../shared/imges/characters/Mastard.png';
 
 export function getCharacterImage(id) {
 	// хардкод

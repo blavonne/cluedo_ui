@@ -3,8 +3,8 @@ import classNames from 'classnames';
 import {responseExample} from "../reducer/response";
 import {getBoardMatrix} from "./utils/getMapMatrix";
 import {HandySvg} from 'handy-svg';
-import foots from '../../../shared/imges/foots.svg';
-import door from '../../../shared/imges/door.svg';
+import Foots from '../../../shared/imges/foots.svg';
+import Door from '../../../shared/imges/door.svg';
 import {HALLWAY} from "./utils/defines";
 import './style.scss';
 
@@ -36,12 +36,12 @@ export function Map({playersCount}) {
 								<div className={getClassProps(cell)}
 									 key={row + col}>
 									{isHall && playerId === null &&
-										<HandySvg src={foots}
+										<HandySvg src={Foots}
 												  className='foots-svg'/>}
-									{isDoor && <HandySvg src={door}
+									{isDoor && <HandySvg src={Door}
 														 className='door-svg'/>}
 									{playerId !== null &&
-										<span>P{cell.playerId}</span>}
+										<span>Pl{cell.playerId}</span>}
 								</div>
 							)
 						})}

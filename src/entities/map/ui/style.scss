@@ -1,3 +1,11 @@
+@import './vars.scss';
+
+.game_board {
+	margin-left: auto;
+	margin-right: auto;
+	width: fit-content;
+}
+
 .board_row {
 	display: flex;
 }
@@ -6,10 +14,10 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 48px;
-	min-height: 48px;
-	width: 48px;
-	min-width: 48px;
+	height: $one_square_size;
+	min-height: $one_square_size;
+	width: $one_square_size;
+	min-width: $one_square_size;
 	border: 1px solid;
 }
 
@@ -43,6 +51,8 @@
 .kitchen {
 	background-color: cadetblue;
 	border-color: cadetblue;
+	background-image: url('../../../shared/imges/rooms/kitchen.png');
+	background-size: cover;
 }
 
 .storage {
